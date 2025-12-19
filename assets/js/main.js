@@ -415,3 +415,66 @@ function updateDisplay(number, isReal) {
         // if(!isReal) el.innerHTML += "*";
     }
 }
+
+/* ==========================================================================
+   WIDGET FLUTUANTE HABBO ORIGINS BR (CORRIGIDO)
+   ========================================================================== */
+
+async function fetchHabboBROnline() {
+    const countElement = document.getElementById('habbo-br-online');
+    if(!countElement) return;
+
+    // URL Oficial
+    const apiUrl = 'https://origins.habbo.com.br/api/public/origins/users';
+    
+    // NOVO PROXY (Mais rápido e estável)
+    // Esse proxy retorna os dados diretos, sem precisar de JSON.parse extra
+    const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(apiUrl)}`;
+
+    try {
+        const response = await fetch(proxyUrl);
+        
+        if (!response.ok) {
+            throw new Error(`Erro HTTP: ${response.status}`);
+        }
+
+        const apiData = await response.json();
+        
+        console.log("Habbo BR Data:", apiData); // Debug
+
+        let onlineUsers = 0;
+
+        // Lógica de segurança para ler o dado correto
+        if (apiData && typeof apiData.online === 'number') {
+            onlineUsers = apiData.online;
+        } else if (apiData && typeof apiData.users === 'number') {
+            onlineUsers = apiData.users;
+        } else if (Array.isArray(apiData)) {
+            // As vezes a API retorna lista de usuarios
+            onlineUsers = apiData.length;
+        } else {
+            // Fallback: Tenta pegar qualquer número que vier
+            onlineUsers = Number(apiData) || 0;
+        }
+
+        // Se o número for 0, as vezes é erro da API, vamos simular um valor real ou manter 0
+        // Para produção, mostre o valor real:
+        countElement.innerText = onlineUsers.toLocaleString('pt-BR');
+        
+        // Remove a classe de loading se houver
+        countElement.classList.remove('text-muted');
+
+    } catch (error) {
+        console.error("Erro Widget Habbo:", error);
+        // Em caso de erro, mostra 'Off' ou '-' em vez de ficar girando pra sempre
+        countElement.innerHTML = '<span style="font-size:0.8rem">Off</span>';
+    }
+}
+
+// Inicializa
+document.addEventListener('DOMContentLoaded', () => {
+    fetchHabboBROnline();
+    setInterval(fetchHabboBROnline, 60000); // 60 segundos
+    
+    // ... seus outros inits ...
+});
