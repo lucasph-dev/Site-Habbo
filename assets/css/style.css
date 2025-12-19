@@ -101,3 +101,96 @@ body {
 .custom-shape-divider-bottom-1689 .shape-fill {
     fill: #f4f7f6; /* Mesma cor do fundo da próxima seção */
 }
+
+/* --- ESTILOS DA PÁGINA DE NOTÍCIAS --- */
+
+/* Efeito Hover nos Cards de Notícia */
+.hover-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08) !important;
+}
+
+/* Ajuste da imagem para não distorcer */
+.object-fit-cover {
+    object-fit: cover;
+}
+
+/* Paginação Bonita */
+.page-link {
+    color: #444;
+    border: none;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.page-link:hover {
+    background-color: #e9ecef;
+    color: #0d6efd;
+}
+
+.page-item.active .page-link {
+    background-color: #0d6efd;
+    color: white;
+    box-shadow: 0 4px 10px rgba(13, 110, 253, 0.3);
+}
+
+/* Badges com fundo transparente (Estilo Moderno) */
+.bg-opacity-10 {
+    --bs-bg-opacity: 0.1;
+}
+
+/* --- ESTILOS MODERNOS (GLOBAL) --- */
+
+/* Hero Section com Gradiente */
+.modern-hero {
+    background: radial-gradient(circle at top right, #1e293b, #0f172a);
+    min-height: 60vh; /* Altura padrão para headers internos */
+    padding-top: 100px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+/* Navbar de Vidro */
+.glass-nav {
+    background: rgba(15, 23, 42, 0.85); /* Um pouco mais escuro para leitura */
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+/* Decoração de Fundo (Bolhas de Luz) */
+.bg-shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    z-index: 0;
+    opacity: 0.6;
+}
+.shape-blue { background: rgba(13, 110, 253, 0.2); width: 400px; height: 400px; top: -100px; right: -100px; }
+.shape-yellow { background: rgba(255, 193, 7, 0.15); width: 300px; height: 300px; bottom: 0; left: -50px; }
+
+/* Cards Flutuantes (Efeito Hover) */
+.hover-lift-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+.hover-lift-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+}
+
+/* Modal de Aviso */
+.modal-content {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}

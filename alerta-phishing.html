@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALERTA DE SEGURANÇA - Habbiano</title>
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        .danger-hero {
+            background: radial-gradient(circle at top right, #3f0e0e, #1a0505);
+            padding-top: 120px;
+            padding-bottom: 80px;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 4px solid #dc3545;
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top glass-nav">
+        <div class="container">
+            <a class="navbar-brand fw-bold font-ubuntu" href="index.html">
+                <img src="img/layout/HAB02.gif" width="30" height="30" class="me-2 d-inline-block align-top"> HABBIANO
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav gap-3 align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html" data-i18n="nav_home">Início</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="noticias.html" data-i18n="nav_news">Jornalismo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ferramentas.html" data-i18n="nav_tools">Ferramentas</a></li>
+                    
+                    <li class="nav-item dropdown border-start border-secondary ps-3 ms-2">
+                        <a class="nav-link dropdown-toggle text-white fw-bold" href="#" role="button" data-bs-toggle="dropdown" id="current-lang">PT</a>
+                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark shadow">
+                            <li><button class="dropdown-item" onclick="setLanguage('pt')">🇧🇷 Português</button></li>
+                            <li><button class="dropdown-item" onclick="setLanguage('en')">🇺🇸 English</button></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="#" class="btn btn-warning text-dark fw-bold rounded-pill px-4 discord-locked" data-i18n="nav_discord">Discord</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="danger-hero">
+        <div class="bg-shape" style="background: rgba(220, 53, 69, 0.15); width: 400px; height: 400px; top: -100px; right: -50px;"></div>
+        
+        <div class="container position-relative z-index-2">
+            <div class="row align-items-center">
+                <div class="col-lg-8 animate-fade-up">
+                    <a href="noticias.html" class="text-white-50 text-decoration-none fw-bold mb-3 d-inline-block hover-white" data-i18n="bubble_back">
+                        <i class="fa-solid fa-arrow-left me-1"></i> Voltar para Notícias
+                    </a>
+                    <h1 class="display-4 fw-bold font-ubuntu text-danger" data-i18n="phishing_hero_title">
+                        <i class="fa-solid fa-triangle-exclamation me-2"></i> ALERTA DE PHISHING
+                    </h1>
+                    <p class="lead text-white-50" data-i18n="phishing_hero_desc">
+                        Não clique em links estranhos. Uma nova onda de sites falsos promete moedas e rouba contas.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container my-5" style="position: relative; z-index: 10; margin-top: -50px;">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                
+                <div class="card border-0 shadow-lg rounded-4 p-5 mb-5 hover-lift-card">
+                    
+                    <h3 class="fw-bold text-dark mb-4" data-i18n="phishing_title1">O que está acontecendo?</h3>
+                    <p class="text-secondary" data-i18n="phishing_p1">
+                        Nossa equipe de segurança identificou...
+                    </p>
+                    <p class="text-secondary" data-i18n="phishing_p2">
+                        Golpistas estão enviando links...
+                    </p>
+
+                    <div class="my-5 p-4 bg-light rounded-3 border border-danger border-opacity-25">
+                        <h5 class="fw-bold text-danger mb-3" data-i18n="phishing_learn"><i class="fa-solid fa-magnifying-glass"></i> Aprenda a Identificar</h5>
+                        
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="p-3 bg-white border border-success rounded-3 h-100 shadow-sm">
+                                    <small class="text-success fw-bold text-uppercase" data-i18n="phishing_official">Site Oficial</small>
+                                    <div class="bg-light p-2 rounded mt-2 font-monospace text-muted small border">
+                                        <i class="fa-solid fa-lock text-success me-1"></i> https://origins.habbo.com
+                                    </div>
+                                    <p class="small text-muted mt-2 m-0" data-i18n="phishing_official_desc">Endereço curto, correto...</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="p-3 bg-white border border-danger rounded-3 h-100 position-relative overflow-hidden shadow-sm">
+                                    <small class="text-danger fw-bold text-uppercase" data-i18n="phishing_fake">Golpe (Fake)</small>
+                                    <div class="bg-light p-2 rounded mt-2 font-monospace text-muted small border border-danger">
+                                        <i class="fa-solid fa-triangle-exclamation text-danger me-1"></i> http://habbo-free-coins.net
+                                    </div>
+                                    <p class="small text-muted mt-2 m-0" data-i18n="phishing_fake_desc">Endereços estranhos...</p>
+                                    <div class="position-absolute top-50 start-50 translate-middle text-danger opacity-25" style="transform: translate(-50%, -50%) rotate(-30deg) !important; font-size: 5rem; font-weight: bold;">FAKE</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="fw-bold text-dark mb-3" data-i18n="phishing_title2">Como se proteger</h3>
+                    <ul class="list-group list-group-flush mb-4">
+                        <li class="list-group-item px-0 d-flex gap-3 border-0">
+                            <i class="fa-solid fa-ban text-danger mt-1"></i>
+                            <div data-i18n="phishing_li1"><strong>NUNCA digite sua senha</strong>...</div>
+                        </li>
+                        <li class="list-group-item px-0 d-flex gap-3 border-0">
+                            <i class="fa-solid fa-keyboard text-primary mt-1"></i>
+                            <div data-i18n="phishing_li2">Sempre <strong>digite manualmente</strong>...</div>
+                        </li>
+                        <li class="list-group-item px-0 d-flex gap-3 border-0">
+                            <i class="fa-solid fa-user-shield text-success mt-1"></i>
+                            <div data-i18n="phishing_li3">Desconfie de promessas...</div>
+                        </li>
+                    </ul>
+
+                    <div class="alert alert-warning d-flex align-items-center gap-3 shadow-sm" role="alert">
+                        <i class="fa-solid fa-skull-crossbones fa-2x"></i>
+                        <div data-i18n="phishing_alert_box">
+                            <strong>Já caiu no golpe?</strong>...
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <aside class="col-lg-4">
+                <div class="p-4 bg-white rounded-4 shadow-sm mb-4 border-top border-4 border-success">
+                    <h5 class="fw-bold mb-3" data-i18n="phishing_links_title"><i class="fa-solid fa-link text-success me-2"></i>Links Oficiais</h5>
+                    <ul class="list-unstyled mb-0 d-grid gap-2">
+                        <li>
+                            <a href="https://origins.habbo.com" target="_blank" class="btn btn-outline-secondary w-100 text-start btn-sm">
+                                <img src="img/layout/habbo-icon-favcon.png" width="16" class="me-2" onerror="this.style.display='none'"> Habbo Origins
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://help.habbo.com" target="_blank" class="btn btn-outline-secondary w-100 text-start btn-sm" data-i18n="phishing_support">
+                                <i class="fa-solid fa-life-ring me-2 text-danger"></i> Suporte
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="p-4 bg-dark text-white rounded-4 shadow-sm text-center">
+                    <i class="fa-brands fa-discord fa-2x mb-3 text-warning"></i>
+                    <h5 class="fw-bold" data-i18n="phishing_discord_title">Está em dúvida?</h5>
+                    <p class="small opacity-75" data-i18n="phishing_discord_desc">
+                        Antes de clicar, tire um print e mande no nosso canal de <strong>#segurança</strong> no Discord.
+                    </p>
+                    <button class="btn btn-warning w-100 fw-bold rounded-pill text-dark discord-locked" data-i18n="phishing_discord_btn">Ir para o Discord</button>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <p class="m-0 opacity-50 small" data-i18n="footer">&copy; 2025 Habbiano. o melhor site de habbo origins!</p>
+    </footer>
+
+    <div class="modal fade" id="devNoticeModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content rounded-4 border-0 shadow-lg">
+                <div class="modal-header bg-warning bg-opacity-10 border-bottom-0">
+                    <h5 class="modal-title fw-bold text-dark d-flex align-items-center">
+                        <i class="fa-solid fa-person-digging text-warning me-2"></i> <span data-i18n="modal_title">Aviso</span>
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <p class="text-secondary" data-i18n="modal_body">Carregando...</p>
+                </div>
+                <div class="modal-footer border-top-0 pt-0">
+                    <button type="button" class="btn btn-dark rounded-pill px-4" data-bs-dismiss="modal" data-i18n="modal_btn">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
