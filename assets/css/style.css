@@ -1,0 +1,103 @@
+/* FONTES E GERAL */
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #f4f7f6;
+    overflow-x: hidden;
+}
+
+.title-pixel {
+    font-family: 'VT323', monospace; /* Fonte pixelada para títulos grandes */
+    letter-spacing: 2px;
+}
+
+/* NAVBAR TRANSPARENTE */
+.trans-nav {
+    background: rgba(20, 30, 48, 0.8); /* Fundo escuro semitransparente */
+    backdrop-filter: blur(10px); /* Efeito de vidro fosco */
+    padding: 15px 0;
+    transition: 0.3s;
+}
+
+/* HERO SECTION (A parte principal) */
+.hero-section {
+    min-height: 100vh; /* Ocupa a tela inteira */
+    /* Substitua a URL abaixo por um print bonito de um quarto Habbo */
+    background: url('../img/layout/background-room.png') no-repeat center center;
+    background-size: cover;
+    margin-top: -80px; /* Compensa a altura da navbar */
+    padding-top: 80px;
+}
+
+/* Camada escura em cima da imagem para o texto aparecer */
+.overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(135deg, rgba(16, 26, 61, 0.95) 0%, rgba(30, 60, 114, 0.8) 100%);
+    z-index: 1;
+}
+
+.z-index-2 {
+    position: relative;
+    z-index: 2;
+}
+
+/* ANIMAÇÃO FLUTUANTE (Para o avatar) */
+.hero-image {
+    max-width: 100%;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+/* CARDS DE DESTAQUE */
+.feature-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+}
+
+/* Ícones coloridos */
+.icon-box {
+    width: 70px;
+    height: 70px;
+}
+.bg-light-blue { background-color: #e3f2fd; }
+.bg-light-warning { background-color: #fff3cd; }
+.bg-light-green { background-color: #d1e7dd; }
+
+/* Bordas coloridas embaixo dos cards */
+.border-bottom-blue { border-bottom: 4px solid #0d6efd; }
+.border-bottom-warning { border-bottom: 4px solid #ffc107; }
+.border-bottom-green { border-bottom: 4px solid #198754; }
+
+/* ONDA (SVG DIVISOR) */
+.custom-shape-divider-bottom-1689 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+    z-index: 2;
+}
+
+.custom-shape-divider-bottom-1689 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 100px;
+}
+
+.custom-shape-divider-bottom-1689 .shape-fill {
+    fill: #f4f7f6; /* Mesma cor do fundo da próxima seção */
+}
